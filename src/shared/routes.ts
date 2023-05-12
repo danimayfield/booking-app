@@ -1,6 +1,6 @@
 export default {
   home: "/",
-  newBooking: "/new-booking",
+  addBooking: "/add-booking",
   viewBookings: "/view-bookings",
   contact: "/contact",
 } as const;

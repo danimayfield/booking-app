@@ -18,7 +18,7 @@ const navItems: NavItem[] = [
     name: 'Home',
   },
   {
-    route: routes.newBooking,
+    route: routes.addBooking,
     icon: <BsCalendarPlus size="1.3rem" className="ml-1" />,
     name: 'Add Booking',
   },

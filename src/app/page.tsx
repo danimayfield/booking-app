@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <Container>
       <div className="min-h-[100vh]">
-        <h2 className="w-full text-center text-6xl">Welcome to TTC Booking!</h2>
+        <h2 className="w-full text-center text-6xl">Welcome!</h2>
         <h3 className="mt-4 w-full text-center text-4xl">
           Where would you like to go?
         </h3>
@@ -14,17 +14,17 @@ export default function Home() {
           <div className="flex h-full w-full items-center justify-center">
             <a
               href={routes.viewBookings}
-              className="h-52 w-52 rounded-lg border-2 border-solid border-slate-300 text-slate-500 transition-all hover:bg-slate-300 hover:text-white"
+              className="flex h-52 w-52 flex-col rounded-lg border-2 border-solid border-slate-300 p-6 text-slate-500 transition-all hover:bg-slate-300 hover:text-white"
             >
-              <p>hello</p>
+              <p>View Bookings</p>
             </a>
           </div>
           <div className="flex h-full w-full items-center justify-center">
             <a
-              href={routes.viewBookings}
-              className="h-52 w-52 rounded-lg border-2 border-solid border-slate-300 text-slate-500 transition-all hover:bg-slate-300 hover:text-white"
+              href={routes.addBooking}
+              className="flex h-52 w-52 flex-col rounded-lg border-2 border-solid border-slate-300 p-6 text-slate-500 transition-all hover:bg-slate-300 hover:text-white"
             >
-              <p>hello</p>
+              <p>Add a Booking</p>
             </a>
           </div>
         </div>
