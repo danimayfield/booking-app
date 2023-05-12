@@ -37,6 +37,7 @@ const NavItem = ({ item }: { item: NavItem }) => {
       className="relative"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      aria-label={item.name}
     >
       <div className="block h-full w-full transition-all hover:scale-125">
         {item.icon}
@@ -59,7 +60,7 @@ const NavItem = ({ item }: { item: NavItem }) => {
 
 export const Nav = () => {
   return (
-    <div className="sticky top-[40vh] ml-4 flex w-min flex-col justify-center items-center space-y-4 rounded-full bg-slate-300 px-3 pt-3 pb-4">
+    <div className="sticky top-[40vh] ml-4 flex w-min flex-col items-center justify-center space-y-4 rounded-full bg-slate-300 px-3 pb-4 pt-3">
       {navItems.map((nav) => (
         <NavItem item={nav} key={nav.name} />
       ))}
