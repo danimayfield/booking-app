@@ -14,17 +14,17 @@ type NavItem = {
 const navItems: NavItem[] = [
   {
     route: routes.home,
-    icon: <HiOutlineHome size="1.5rem" className="ml-1 text-white" />,
+    icon: <HiOutlineHome size="1.5rem" className="text-white" />,
     name: 'Home',
   },
   {
     route: routes.addBooking,
-    icon: <BsCalendarPlus size="1.3rem" className="ml-1 text-white" />,
+    icon: <BsCalendarPlus size="1.3rem" className="text-white" />,
     name: 'Add Booking',
   },
   {
     route: routes.viewBookings,
-    icon: <BsCalendarWeek size="1.3rem" className="ml-1 text-white" />,
+    icon: <BsCalendarWeek size="1.3rem" className="text-white" />,
     name: 'View All Bookings',
   },
 ];
@@ -59,7 +59,7 @@ const NavItem = ({ item }: { item: NavItem }) => {
 
 export const Nav = () => {
   return (
-    <div className="sticky top-0 m-4 flex w-min flex-col space-y-4 rounded-full bg-slate-300 p-3">
+    <div className="sticky top-[40vh] ml-4 flex w-min flex-col justify-center items-center space-y-4 rounded-full bg-slate-300 px-3 pt-3 pb-4">
       {navItems.map((nav) => (
         <NavItem item={nav} key={nav.name} />
       ))}
