@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply block rounded-sm px-4 py-3;
+  }
+  .btn--primary {
+    @apply bg- bg-slate-500 font-bold text-white transition hover:bg-slate-600;
+  }
+
+  .btn--sm {
+    @apply rounded-sm px-2 py-3;
+  }
+
+  .btn--lg {
+    @apply px-5 py-3;
+  }
+
+  .btn--link {
+    @apply text-cyan-400 underline;
+  }
+
+  .link {
+    @apply font-bold text-cyan-600 hover:underline;
+  }
+}
+
+@layer components {
+  .heading-sm {
+    @apply text-sm font-bold;
+  }
+  .heading-md {
+    @apply text-md font-bold;
+  }
+  .heading-lg {
+    @apply text-lg font-bold;
+  }
+  .heading-xl {
+    @apply text-lg font-bold lg:text-xl;
+  }
+  .heading-2xl {
+    @apply text-xl font-bold lg:text-2xl;
+  }
+}
