@@ -1,7 +1,7 @@
-'use client';
-import { PageContainer } from '@/shared/components';
-import routes from '@/shared/routes';
-import { BsCalendarPlus, BsCalendarWeek } from 'react-icons/bs';
+"use client";
+import { BsCalendarPlus, BsCalendarWeek } from "react-icons/bs";
+import { PageContainer } from "@/shared/components";
+import routes from "@/shared/routes";
 
 export default function Home() {
   return (

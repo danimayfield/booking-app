@@ -1,7 +1,10 @@
 module.exports = {
-  trailingComma: "es5",
-  singleQuote: true,
-  endOfLine: "auto",
-  tailwindConfig: "./tailwind.config.js",
-  plugins: [require("prettier-plugin-tailwindcss")],
+  arrowParens: 'avoid',
+  bracketSameLine: false,
+  bracketSpacing: true,
+  singleQuote: false,
+  trailingComma: 'all',
+  endOfLine: 'auto',
+  tailwindConfig: './tailwind.config.js',
+  plugins: [require('prettier-plugin-tailwindcss')],
 };

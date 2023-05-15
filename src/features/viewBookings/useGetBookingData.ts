@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import axios, { AxiosResponse } from 'axios';
+import { useEffect, useState } from "react";
+import axios, { AxiosResponse } from "axios";
 
 interface Booking {
   _id: string;
@@ -23,12 +23,12 @@ export const useGetBookingData = () => {
     const fetchData = async () => {
       try {
         const response: AxiosResponse<Booking[]> = await axios.get<Booking[]>(
-          'https://ttc-bookings-api.booker.tech/bookings'
+          "https://ttc-bookings-api.booker.tech/bookings",
         );
         setData(response.data);
         setLoading(false);
-      } catch (error) {
-        setError(`Error fetching booking data: ${error}`);
+      } catch (e) {
+        setError(`Error fetching booking data: ${e}`);
       }
     };
 

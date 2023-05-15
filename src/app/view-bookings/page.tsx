@@ -1,10 +1,15 @@
-'use client';
-import { useGetBookingData } from '@/features/viewBookings';
-import { PageContainer } from '@/shared/components';
-import React from 'react';
+"use client";
+import React from "react";
+import { Calendar, CalendarContextProvider } from "@/features/viewBookings";
+
+import { PageContainer } from "@/shared/components";
 
 export default function ViewBookings() {
-  const { data, error } = useGetBookingData();
-  console.log(data, error);
-  return <PageContainer>View Bookings</PageContainer>;
+  return (
+    <PageContainer>
+      <CalendarContextProvider>
+        <Calendar />
+      </CalendarContextProvider>
+    </PageContainer>
+  );
 }

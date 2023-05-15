@@ -1,9 +1,9 @@
-'use client';
-import routes from '@/shared/routes';
-import React, { useState } from 'react';
-import { BsCalendarPlus, BsCalendarWeek } from 'react-icons/bs';
-import { HiOutlineHome } from 'react-icons/hi';
-import { AnimatePresence, motion } from 'framer-motion';
+"use client";
+import React, { useState } from "react";
+import { BsCalendarPlus, BsCalendarWeek } from "react-icons/bs";
+import { HiOutlineHome } from "react-icons/hi";
+import { AnimatePresence, motion } from "framer-motion";
+import routes from "@/shared/routes";
 
 type NavItem = {
   route: string;
@@ -15,17 +15,17 @@ const navItems: NavItem[] = [
   {
     route: routes.home,
     icon: <HiOutlineHome size="1.5rem" className="text-white" />,
-    name: 'Home',
+    name: "Home",
   },
   {
     route: routes.addBooking,
     icon: <BsCalendarPlus size="1.3rem" className="text-white" />,
-    name: 'Add Booking',
+    name: "Add Booking",
   },
   {
     route: routes.viewBookings,
     icon: <BsCalendarWeek size="1.3rem" className="text-white" />,
-    name: 'View All Bookings',
+    name: "View All Bookings",
   },
 ];
 
@@ -61,7 +61,7 @@ const NavItem = ({ item }: { item: NavItem }) => {
 export const Nav = () => {
   return (
     <div className="sticky top-[40vh] ml-4 flex w-min flex-col items-center justify-center space-y-4 rounded-full bg-slate-300 px-3 pb-4 pt-3">
-      {navItems.map((nav) => (
+      {navItems.map(nav => (
         <NavItem item={nav} key={nav.name} />
       ))}
     </div>
