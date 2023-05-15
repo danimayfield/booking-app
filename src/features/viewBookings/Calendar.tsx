@@ -67,14 +67,17 @@ export const Calendar = () => {
   return (
     <>
       <div className="grid min-w-max grid-cols-7 gap-1 overflow-auto pr-6 lg:pr-0">
+        {/* Calendar labels: */}
         {weekdayLabels.map(w => (
           <div key={w} className="text-center text-slate-700">
             {w}
           </div>
         ))}
+        {/* Empty divs to have dates match weekday columns: */}
         {leadingDays.map(e => (
           <div key={e} />
         ))}
+        {/* Dates: */}
         {monthArray.map(day => {
           const currentDate = new Date(
             `${activeDate.getFullYear()}-${activeDate.getMonth() + 1}-${day}`,
