@@ -33,7 +33,7 @@ const BookingBannerButton = ({
   const { name, color } = booking;
   return (
     <button
-      className="block w-full px-3 text-left text-sm lg:text-base"
+      className="block w-full px-3 py-1 text-left text-sm transition-shadow hover:shadow-lg lg:text-base"
       style={{ backgroundColor: color }}
       aria-label="Click for more information on this booking"
       onClick={onClick}
