@@ -49,7 +49,9 @@ export const DayItem = ({
 }: DayItemProps) => {
   const sortedBookings = sortBookingsByDate(activeBookings);
   return (
-    <div className={`h-40 space-y-1 border border-solid border-gray-300 py-3`}>
+    <div
+      className={`h-40 space-y-1 overflow-auto border border-solid border-gray-300 py-3`}
+    >
       <p className="px-3 text-sm text-slate-500">{day}</p>
       {sortedBookings &&
         sortedBookings.map(b => (
