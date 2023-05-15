@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { PageContainer } from "@/shared/components";
+import { AddBookingForm } from "@/features/addBooking";
 
 export default function AddBooking() {
   return (
@@ -10,6 +11,7 @@ export default function AddBooking() {
           Add Booking
         </h1>
       </div>
+      <AddBookingForm />
     </PageContainer>
   );
 }
