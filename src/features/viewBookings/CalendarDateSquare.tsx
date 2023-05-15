@@ -7,7 +7,7 @@ export type BookingCondensed = {
   color: string;
 };
 
-type DayItemProps = {
+type CalendarDateSquareProps = {
   day: number;
   activeBookings?: BookingCondensed[];
   onOpenBookingDetails: (id: string) => void;
@@ -23,7 +23,7 @@ function sortBookingsByDate(
   });
 }
 
-const BookingItem = ({
+const BookingBannerButton = ({
   booking,
   onClick,
 }: {
@@ -43,11 +43,11 @@ const BookingItem = ({
   );
 };
 
-export const DayItem = ({
+export const CalendarDateSquare = ({
   day,
   activeBookings,
   onOpenBookingDetails,
-}: DayItemProps) => {
+}: CalendarDateSquareProps) => {
   const sortedBookings = sortBookingsByDate(activeBookings);
   return (
     <div
@@ -56,7 +56,7 @@ export const DayItem = ({
       <p className="px-3 text-sm text-slate-500">{day}</p>
       {sortedBookings &&
         sortedBookings.map(b => (
-          <BookingItem
+          <BookingBannerButton
             key={b.id}
             booking={b}
             onClick={() => onOpenBookingDetails(b.id)}

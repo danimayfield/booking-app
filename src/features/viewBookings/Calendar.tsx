@@ -6,7 +6,7 @@ import {
   eachDayOfInterval,
   isSameDay,
 } from "date-fns";
-import { BookingCondensed, DayItem } from "./DayItem";
+import { BookingCondensed, CalendarDateSquare } from "./CalendarDateSquare";
 import { useGetBookingData } from "./useGetBookingData";
 import { useCalendarContext } from "./CalendarContext";
 import { BookingDetailsModal } from "./BookingDetailsModal";
@@ -86,7 +86,7 @@ export const Calendar = () => {
             item.bookedDays.some(d => isSameDay(d, currentDate)),
           );
           return (
-            <DayItem
+            <CalendarDateSquare
               key={day}
               day={day}
               activeBookings={activeBookings}
