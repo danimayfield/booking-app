@@ -36,6 +36,7 @@ export const Modal = ({
         }
       }}
       role="button"
+      aria-label="Exit modal"
       tabIndex={0}
       className={twMerge(
         `backdrop-blur-xs fixed left-0 top-0 z-30 flex h-full w-0 items-center overflow-x-hidden bg-slate-900/[.7] opacity-0 transition-opacity duration-500 ${modalProps}`,
@@ -52,6 +53,7 @@ export const Modal = ({
           <button
             onClick={onModalClose}
             className="absolute right-5 top-2 z-20 text-4xl font-extralight text-slate-700"
+            aria-label="Exit modal"
           >
             &times;
           </button>
