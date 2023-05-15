@@ -60,7 +60,7 @@ const NavItem = ({ item }: { item: NavItem }) => {
 
 export const Nav = () => {
   return (
-    <div className="sticky top-[40vh] ml-4 flex w-min flex-col items-center justify-center space-y-4 rounded-full bg-slate-300 px-3 pb-4 pt-3">
+    <div className="sticky top-3 ml-4 flex w-min flex-col items-center justify-center space-y-4 rounded-full bg-slate-300 px-3 pb-4 pt-3 md:top-[40vh]">
       {navItems.map(nav => (
         <NavItem item={nav} key={nav.name} />
       ))}
