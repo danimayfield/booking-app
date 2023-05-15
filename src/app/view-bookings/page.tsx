@@ -7,9 +7,9 @@ import { MonthPicker } from "@/features/viewBookings/MonthPicker";
 
 export default function ViewBookings() {
   return (
-    <PageContainer>
+    <PageContainer className="pb-12">
       <div className="mb-12">
-        <h2 className="w-full text-center text-6xl text-slate-700">
+        <h2 className="heading-xl w-full text-center text-slate-700">
           View Your Bookings
         </h2>
       </div>
