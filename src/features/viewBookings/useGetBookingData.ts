@@ -16,7 +16,7 @@ interface Booking {
 
 export const useGetBookingData = () => {
   const [data, setData] = useState<Booking[] | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export const useGetBookingData = () => {
           "https://ttc-bookings-api.booker.tech/bookings",
         );
         setData(response.data);
-        setLoading(false);
+        setIsLoading(false);
       } catch (e) {
         setError(`Error fetching booking data: ${e}`);
       }
@@ -35,5 +35,5 @@ export const useGetBookingData = () => {
     fetchData();
   }, []);
 
-  return { data, loading, error };
+  return { data, isLoading, error };
 };
