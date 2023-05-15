@@ -48,7 +48,7 @@ const NavItem = ({ item }: { item: NavItem }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="absolute left-12 top-0 w-32 text-sm text-slate-700"
+            className="absolute left-12 top-0 hidden w-32 text-sm text-slate-700 sm:block"
           >
             {item.name}
           </motion.p>
