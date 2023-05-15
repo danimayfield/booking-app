@@ -18,12 +18,13 @@ export const BookingDetailsModal = ({
   const { data, error, isLoading } = useGetBookingData();
   const booking = data?.find(b => b._id === bookingId);
 
-  if (booking === undefined) {
+  if (booking === undefined || error) {
     return (
       <Modal modalOverlayRef={modalOverlayRef} onModalClose={onModalClose}>
         <div className="w-96 px-4 py-12">
           <p className="heading-lg mb-2">Booking not found...</p>
           <p>Please try again later</p>
+          {error && <p className="mt-2">{error}</p>}
         </div>
       </Modal>
     );
