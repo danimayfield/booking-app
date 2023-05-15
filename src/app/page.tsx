@@ -1,11 +1,11 @@
 'use client';
-import { Container } from '@/shared/components';
+import { PageContainer } from '@/shared/components';
 import routes from '@/shared/routes';
 import { BsCalendarPlus, BsCalendarWeek } from 'react-icons/bs';
 
 export default function Home() {
   return (
-    <Container className="flex h-[80vh] items-center justify-center">
+    <PageContainer className="flex h-[80vh] items-center justify-center">
       <div>
         <h2 className="w-full text-center text-6xl text-slate-700">Welcome!</h2>
         <h3 className="mt-4 w-full text-center text-4xl text-slate-600">
@@ -32,6 +32,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </Container>
+    </PageContainer>
   );
 }
