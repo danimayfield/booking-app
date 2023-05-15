@@ -12,6 +12,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 # Explainations
 
+## Home 
+
+I decided to make a home page because the app felt incomplete without one.
+
 ## View Bookings
 
 I decided to create a calendar to capture the bookings, because I thought a calendar might make the most sense to display different bookings. This way the booking managers can easily view what clients have booked their listing on the same days and manage accordingly. I also chose to make my own calendar with the help of the ```date-fns``` library in order to have more control over the styling without having to use a large library.
