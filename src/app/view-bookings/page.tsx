@@ -9,9 +9,9 @@ export default function ViewBookings() {
   return (
     <PageContainer className="pb-12">
       <div className="mb-12">
-        <h2 className="heading-xl w-full text-center text-slate-700">
+        <h1 className="heading-xl w-full text-center text-slate-700">
           View Your Bookings
-        </h2>
+        </h1>
       </div>
       <CalendarContextProvider>
         <MonthPicker />

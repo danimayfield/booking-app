@@ -7,12 +7,12 @@ export default function Home() {
   return (
     <PageContainer className="flex h-[80vh] items-center justify-center">
       <div>
-        <h2 className="heading-xl w-full text-center text-slate-700">
+        <h1 className="heading-xl w-full text-center text-slate-700">
           Welcome!
-        </h2>
-        <h3 className="heading-lg mt-4 w-full text-center text-slate-600">
+        </h1>
+        <h2 className="heading-lg mt-4 w-full text-center text-slate-600">
           Where would you like to go?
-        </h3>
+        </h2>
         <div className="mx-auto my-16 grid grid-cols-1 gap-5 md:grid-cols-2">
           <div className="flex h-full w-full items-center justify-center">
             <a
