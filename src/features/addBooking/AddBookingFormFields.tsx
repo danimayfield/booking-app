@@ -14,7 +14,7 @@ export const AddBookingFormFields = ({
   formValues,
 }: AddBookingFormFieldsProps) => {
   const { description, email, endDateTime, name, phone, startDateTime, title } =
-      formValues;
+    formValues;
 
   const textInputs = useMemo(
     () => [
