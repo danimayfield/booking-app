@@ -60,6 +60,11 @@ export const Calendar = () => {
     openModal();
   };
 
+  if (error) {
+    // TODO: create error component
+    throw new Error(error);
+  }
+
   if (isLoading) {
     return <PageLoadingSpinner />;
   }
