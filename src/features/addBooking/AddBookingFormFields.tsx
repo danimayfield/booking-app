@@ -4,6 +4,10 @@ import {
   AddBookingFormValues,
 } from "./useAddBookingForm";
 import { CustomErrorMessage, Errors } from "@/shared/components";
+import {
+  DATE_PATTERN_DATE_TIME_FIELD,
+  formatDate,
+} from "@/shared/utils/formatters";
 
 type AddBookingFormFieldsProps = {
   onChange: AddBookingFormOnChange;
@@ -65,8 +69,8 @@ export const AddBookingFormFields = ({
         />
         <CustomErrorMessage name="description" errors={errors} />
       </div>
-      <div className="flex w-full justify-between">
-        <div>
+      <div className="flex w-full flex-col justify-between space-y-4 md:flex-row md:space-y-0">
+        <div className="md:mr-3">
           <label htmlFor="startDateTime" className="text-slate-800">
             Start Date:
           </label>
@@ -75,9 +79,9 @@ export const AddBookingFormFields = ({
             id="startDateTime"
             name="startDateTime"
             placeholder="Start Date"
-            value={startDateTime}
+            value={formatDate(startDateTime, DATE_PATTERN_DATE_TIME_FIELD)}
             onChange={onChange}
-            className="input input--primary w-full"
+            className="input input--primary mt-1 w-full"
           />
           <CustomErrorMessage
             name="startDateTime"
@@ -85,7 +89,7 @@ export const AddBookingFormFields = ({
             className="mt-1"
           />
         </div>
-        <div>
+        <div className="md:ml-3">
           <label htmlFor="endDateTime" className="text-slate-800">
             End Date:
           </label>
@@ -94,9 +98,9 @@ export const AddBookingFormFields = ({
             id="endDateTime"
             name="endDateTime"
             placeholder="End Date"
-            value={endDateTime}
+            value={formatDate(endDateTime, DATE_PATTERN_DATE_TIME_FIELD)}
             onChange={onChange}
-            className="input input--primary w-full"
+            className="input input--primary mt-1 w-full"
           />
           <CustomErrorMessage
             name="endDateTime"
