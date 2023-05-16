@@ -40,7 +40,10 @@ export const AddBookingForm = () => {
                 disabled={isLoading}
               >
                 {isLoading ? (
-                  <div className="spinner spinner--small mx-6" />
+                  <div
+                    className="spinner spinner--small mx-6"
+                    aria-label="Loading"
+                  />
                 ) : (
                   "Complete"
                 )}
