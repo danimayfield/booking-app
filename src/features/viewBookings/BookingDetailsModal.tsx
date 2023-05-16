@@ -38,8 +38,9 @@ export const BookingDetailsModal = ({
         </div>
       ) : (
         <div className="flex w-full flex-col content-center items-center justify-center px-4 py-12 sm:w-96">
-          <p className="heading-lg">{booking.name}&apos;s Booking</p>
+          <p className="heading-lg">{booking.title}</p>
           <div className="mt-6 space-y-2">
+            <p className="font-semibold">{booking.name}&apos;s Booking</p>
             <p>{booking.description}</p>
             <p>
               Dates:&nbsp;
