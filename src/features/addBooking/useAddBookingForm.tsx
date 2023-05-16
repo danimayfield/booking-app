@@ -18,8 +18,32 @@ const schema = yup.object().shape({
     .email("Please enter a valid email")
     .required("Email address is required"),
   description: yup.string().required("Description is required"),
-  startDateTime: yup.string().required("Please choose a start date"),
-  endDateTime: yup.string().required("Please choose an end date"),
+  startDateTime: yup
+    .string()
+    .required("Please choose a start date")
+    .test(
+      "startDateTime",
+      "Start date must be before end date",
+      function (value) {
+        const { endDateTime } = this.parent;
+        if (!value || !endDateTime) {
+          // Allow empty values to be handled by the required() validation
+          return true;
+        }
+        return new Date(value) < new Date(endDateTime);
+      },
+    ),
+  endDateTime: yup
+    .string()
+    .required("Please choose an end date")
+    .test("endDateTime", "End date must be after start date", function (value) {
+      const { startDateTime } = this.parent;
+      if (!value || !startDateTime) {
+        // Allow empty values to be handled by the required() validation
+        return true;
+      }
+      return new Date(value) > new Date(startDateTime);
+    }),
 });
 
 export interface AddBookingFormValues {
