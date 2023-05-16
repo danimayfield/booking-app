@@ -44,7 +44,7 @@ export const Modal = ({
     >
       <div className="relative flex max-h-fit w-full content-center justify-center">
         <div
-          className="relative max-w-3xl rounded-sm bg-slate-50 px-4 py-5 sm:px-16"
+          className="relative max-h-[60vh] max-w-3xl overflow-auto rounded-sm bg-slate-50 px-4 py-5 sm:px-16"
           onClick={e => e.stopPropagation()}
           onKeyDown={e => e.stopPropagation()}
           role="button"
