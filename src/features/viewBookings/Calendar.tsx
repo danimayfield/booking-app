@@ -6,10 +6,10 @@ import {
   eachDayOfInterval,
   isSameDay,
 } from "date-fns";
+import { BookingDetailsModal } from "../viewBookingDetails";
 import { BookingCondensed, CalendarDateSquare } from "./CalendarDateSquare";
 import { useGetBookingData } from "./useGetBookingData";
 import { useCalendarContext } from "./CalendarContext";
-import { BookingDetailsModal } from "./BookingDetailsModal";
 import { calendarColors, weekdayLabels } from "./constants";
 import { useModal } from "@/shared/components/Modal";
 import { PageLoadingSpinner } from "@/shared/components";
