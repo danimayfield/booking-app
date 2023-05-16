@@ -85,7 +85,9 @@ export const Calendar = () => {
         {/* Dates: */}
         {monthArray.map(day => {
           const currentDate = new Date(
-            `${activeDate.getFullYear()}-${activeDate.getMonth() + 1}-${day}`,
+            activeDate.getFullYear(),
+            activeDate.getMonth(),
+            day,
           );
           const activeBookings = condensedData?.filter(item =>
             item.bookedDays.some(d => isSameDay(d, currentDate)),
