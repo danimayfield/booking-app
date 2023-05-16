@@ -7,7 +7,7 @@ import { DATE_PATTERN_MONTH, formatDate } from "@/shared/utils/formatters";
 export const MonthPicker = () => {
   const { activeDate, updateActiveDate } = useCalendarContext();
 
-  const months = Array.from({ length: 12 }, (_, index) => index + 1);
+  const months = Array.from({ length: 12 }, (_, index) => index);
 
   const currentYear = activeDate.getFullYear();
 
@@ -36,10 +36,10 @@ export const MonthPicker = () => {
           <select
             id="month"
             className="cursor-pointer bg-slate-300 text-white"
-            value={activeDate.getMonth() + 1}
+            value={activeDate.getMonth()}
             onChange={e =>
               handleChangeMonth(
-                new Date(`${currentYear}-${e.currentTarget.value}-1`),
+                new Date(currentYear, Number(e.currentTarget.value), 1),
               )
             }
           >
@@ -48,7 +48,7 @@ export const MonthPicker = () => {
                 key={m}
                 value={m}
                 label={formatDate(
-                  new Date(`${currentYear}-${m}-1`),
+                  new Date(currentYear, m, 1),
                   DATE_PATTERN_MONTH,
                 )}
               />
