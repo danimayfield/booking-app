@@ -56,6 +56,10 @@ export interface AddBookingFormValues {
   endDateTime: string;
 }
 
+export type AddBookingFormOnChange = (
+  event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+) => void;
+
 export const useAddBookingForm = (
   onSuccess?: (data: AddBookingFormValues) => void,
 ) => {
@@ -81,7 +85,9 @@ export const useAddBookingForm = (
     setFormError(undefined);
   };
 
-  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange: AddBookingFormOnChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = event.target;
     setFormValues(prevData => ({ ...prevData, [name]: value }));
   };

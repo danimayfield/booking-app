@@ -1,9 +1,12 @@
 import React, { useMemo } from "react";
-import { AddBookingFormValues } from "./useAddBookingForm";
+import {
+  AddBookingFormOnChange,
+  AddBookingFormValues,
+} from "./useAddBookingForm";
 import { CustomErrorMessage, Errors } from "@/shared/components";
 
 type AddBookingFormFieldsProps = {
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: AddBookingFormOnChange;
   errors: Errors;
   formValues: AddBookingFormValues;
 };
@@ -22,9 +25,8 @@ export const AddBookingFormFields = ({
       { label: "Email Address", name: "email", value: email },
       { label: "Phone Number", name: "phone", value: phone },
       { label: "Title", name: "title", value: title },
-      { label: "Description", name: "description", value: description },
     ],
-    [description, email, name, phone, title],
+    [email, name, phone, title],
   );
   return (
     <>
@@ -49,9 +51,25 @@ export const AddBookingFormFields = ({
           />
         </div>
       ))}
+      <div>
+        <label htmlFor="startDateTime" className="sr-only">
+          Description:
+        </label>
+        <textarea
+          id="description"
+          name="description"
+          placeholder="Description"
+          value={description}
+          onChange={onChange}
+          className="input input--primary w-full"
+        />
+        <CustomErrorMessage name="description" errors={errors} />
+      </div>
       <div className="flex w-full justify-between">
         <div>
-          <label htmlFor="startDateTime">Start Date:</label>
+          <label htmlFor="startDateTime" className="text-slate-800">
+            Start Date:
+          </label>
           <input
             type="datetime-local"
             id="startDateTime"
@@ -68,7 +86,9 @@ export const AddBookingFormFields = ({
           />
         </div>
         <div>
-          <label htmlFor="endDateTime">End Date:</label>
+          <label htmlFor="endDateTime" className="text-slate-800">
+            End Date:
+          </label>
           <input
             type="datetime-local"
             id="endDateTime"
