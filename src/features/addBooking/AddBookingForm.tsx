@@ -1,10 +1,23 @@
-import React from "react";
-import { useAddBookingForm } from "./useAddBookingForm";
+import React, { useState } from "react";
+import {
+  AddBookingFormValues,
+  defaultBookingFormValues,
+  useAddBookingForm,
+} from "./useAddBookingForm";
 import { AddBookingFormFields } from "./AddBookingFormFields";
+import { AddBookingFormSuccessModal } from "./AddBookingFormSuccessModal";
 import { PageContainer } from "@/shared/components";
+import { useModal } from "@/shared/components/Modal";
 
 export const AddBookingForm = () => {
-  const handleSuccess = () => console.log("done");
+  const [completedFormValues, setCompletedFormValues] =
+    useState<AddBookingFormValues>(defaultBookingFormValues);
+  const { closeModal, modalOverlayRef, openModal } = useModal();
+
+  const handleSuccess = (data: AddBookingFormValues) => {
+    setCompletedFormValues(data);
+    openModal();
+  };
 
   const { onSubmit, formError, isLoading, errors, formValues, onChange } =
     useAddBookingForm(handleSuccess);
@@ -36,7 +49,14 @@ export const AddBookingForm = () => {
           </div>
         </form>
       </PageContainer>
-      {/* <ContactFormSuccessModal isOpen={isOpen} onClose={onClose} /> */}
+      <AddBookingFormSuccessModal
+        modalOverlayRef={modalOverlayRef}
+        onModalClose={closeModal}
+        startDateTime={completedFormValues.startDateTime}
+        endDateTime={completedFormValues.endDateTime}
+        title={completedFormValues.title}
+        name={completedFormValues.name}
+      />
     </>
   );
 };
