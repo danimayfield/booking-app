@@ -44,7 +44,10 @@ export const AddBookingFormSuccessModal = ({
                   },
                 }}
               >
-                <BsCheckCircleFill size="10rem" className="text-teal-500" />
+                <BsCheckCircleFill
+                  style={{ width: "10rem", height: "10rem" }}
+                  className="text-teal-500"
+                />
               </motion.div>
             )}
           </AnimatePresence>

@@ -24,7 +24,7 @@ export const MonthPicker = () => {
           aria-label="Previous month"
           onClick={() => handleChangeMonth(prevMonthDate)}
         >
-          <BsChevronLeft size="2rem" />
+          <BsChevronLeft style={{ width: "2rem", height: "2rem" }} />
         </button>
       </div>
       <div>
@@ -61,7 +61,7 @@ export const MonthPicker = () => {
           aria-label="Next month"
           onClick={() => handleChangeMonth(nextMonthDate)}
         >
-          <BsChevronRight size="2rem" />
+          <BsChevronRight style={{ width: "2rem", height: "2rem" }} />
         </button>
       </div>
     </div>

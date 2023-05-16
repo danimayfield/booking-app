@@ -20,7 +20,7 @@ export default function Home() {
               className="flex h-52 w-52 flex-col items-center justify-center space-y-4 rounded-lg border-2 border-solid border-slate-300 p-6 text-slate-500 transition-all hover:border-slate-200 hover:bg-slate-300 hover:text-white"
             >
               <p>View Bookings</p>
-              <BsCalendarWeek size="4rem" />
+              <BsCalendarWeek style={{ width: "4rem", height: "4rem" }} />
             </a>
           </div>
           <div className="flex h-full w-full items-center justify-center">
@@ -29,7 +29,7 @@ export default function Home() {
               className="flex h-52 w-52 flex-col items-center justify-center space-y-4 rounded-lg border-2 border-solid border-slate-300 p-6 text-slate-500 transition-all hover:border-slate-200 hover:bg-slate-300 hover:text-white"
             >
               <p>Add a Booking</p>
-              <BsCalendarPlus size="4rem" />
+              <BsCalendarPlus style={{ width: "4rem", height: "4rem" }} />
             </a>
           </div>
         </div>

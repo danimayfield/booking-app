@@ -14,17 +14,32 @@ type NavItem = {
 const navItems: NavItem[] = [
   {
     route: routes.home,
-    icon: <HiOutlineHome size="1.5rem" className="text-white" />,
+    icon: (
+      <HiOutlineHome
+        style={{ width: "1.5rem", height: "1.5rem" }}
+        className="text-white"
+      />
+    ),
     name: "Home",
   },
   {
     route: routes.addBooking,
-    icon: <BsCalendarPlus size="1.3rem" className="text-white" />,
+    icon: (
+      <BsCalendarPlus
+        style={{ width: "1.3rem", height: "1.3rem" }}
+        className="text-white"
+      />
+    ),
     name: "Add Booking",
   },
   {
     route: routes.viewBookings,
-    icon: <BsCalendarWeek size="1.3rem" className="text-white" />,
+    icon: (
+      <BsCalendarWeek
+        style={{ width: "1.3rem", height: "1.3rem" }}
+        className="text-white"
+      />
+    ),
     name: "View All Bookings",
   },
 ];
