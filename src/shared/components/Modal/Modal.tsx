@@ -26,6 +26,10 @@ export const Modal = ({
     };
   }, [onModalClose]);
 
+  const isModalOpen =
+    modalOverlayRef?.current?.style.opacity &&
+    modalOverlayRef.current.style.opacity === "1";
+
   return (
     <div
       ref={modalOverlayRef}
@@ -42,7 +46,10 @@ export const Modal = ({
         `backdrop-blur-xs fixed left-0 top-0 z-30 flex h-full w-0 items-center overflow-x-hidden bg-slate-900/[.7] opacity-0 transition-opacity duration-500 ${modalProps}`,
       )}
     >
-      <div className="relative flex max-h-fit w-full content-center justify-center">
+      <div
+        className="relative flex max-h-fit w-full content-center justify-center"
+        aria-expanded={!!isModalOpen}
+      >
         <div
           className="relative max-h-[60vh] max-w-3xl overflow-auto rounded-sm bg-slate-50 px-4 py-5 sm:px-16"
           onClick={e => e.stopPropagation()}

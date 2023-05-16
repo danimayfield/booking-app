@@ -21,5 +21,9 @@ export const CustomErrorMessage = ({
     return null;
   }
 
-  return <p className={twMerge(`error ${className}`)}>{errorMessage}</p>;
+  return (
+    <p aria-live="polite" className={twMerge(`error ${className}`)}>
+      {errorMessage}
+    </p>
+  );
 };
