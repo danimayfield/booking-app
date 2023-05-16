@@ -1,6 +1,7 @@
 import React, { FormEvent, useState } from "react";
 import * as yup from "yup";
 import axios from "axios";
+import { add } from "date-fns";
 import { Errors } from "@/shared/components";
 
 const phoneRegExp =
@@ -60,27 +61,27 @@ export type AddBookingFormOnChange = (
   event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
 ) => void;
 
+export const defaultBookingFormValues: AddBookingFormValues = {
+  name: "",
+  title: "",
+  phone: "",
+  email: "",
+  description: "",
+  startDateTime: add(new Date(), { weeks: 1 }).toISOString(),
+  endDateTime: add(new Date(), { weeks: 1, days: 1 }).toISOString(),
+};
 export const useAddBookingForm = (
   onSuccess?: (data: AddBookingFormValues) => void,
 ) => {
-  const defaultFormValues: AddBookingFormValues = {
-    name: "",
-    title: "",
-    phone: "",
-    email: "",
-    description: "",
-    startDateTime: "",
-    endDateTime: "",
-  };
-
-  const [formValues, setFormValues] =
-    useState<AddBookingFormValues>(defaultFormValues);
+  const [formValues, setFormValues] = useState<AddBookingFormValues>(
+    defaultBookingFormValues,
+  );
   const [errors, setErrors] = useState<Errors>({});
   const [formError, setFormError] = useState<string | undefined>(undefined);
   const [isLoading, setIsLoading] = useState(false);
 
   const resetData = () => {
-    setFormValues(defaultFormValues);
+    setFormValues(defaultBookingFormValues);
     setErrors({});
     setFormError(undefined);
   };
@@ -107,8 +108,8 @@ export const useAddBookingForm = (
           })
           .then(response => {
             if (response.status === 200) {
-              resetData();
               onSuccess?.(data);
+              resetData();
             } else {
               throw new Error("Failed to add booking");
             }
